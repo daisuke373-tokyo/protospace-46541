@@ -50,7 +50,7 @@
               <%# コメントの内容を表示している commentテーブルのcontentカラムを表示している%>
               <%= comment.content %>
               <%# コメントの投稿者の名前を表示している %>
-              <%= link_to "by #{comment.user.name}", user_path(comment.user), class: :comment_user %>
+              <%= link_to "  (#{comment.user.name})  ", user_path(comment.user), class: :comment_user %>
             </li>
           <% end %>
         </ul>

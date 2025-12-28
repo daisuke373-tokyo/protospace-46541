@@ -25,6 +25,9 @@ class PrototypesController < ApplicationController
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
     # プロトタイプに紐づくコメントを全て取得するして@commentsに代入。また、N+1問題を防ぐためにincludesメソッドでユーザー情報もまとめて取得している。
+    # 例:DB にプロトタイプ ID=2 のコメント3件がある場合
+    # @prototype = Prototype.find(2)  # ID=2 のプロトタイプ取得
+    # @comments = @prototype.comments  # そのプロトタイプに紐づくコメント3件を @comments に代入
   end
 
   def edit
